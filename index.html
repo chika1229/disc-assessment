@@ -181,8 +181,8 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-seri
     <p>氏名を入力して診断結果を保存します。保存した結果は管理画面から確認できます。</p>
     <input type="text" id="save-name" placeholder="氏名（例：山田 太郎）" maxlength="30">
     <div class="modal-btns">
-      <button class="btn btn-o" onclick="window['closeSaveModal']()">キャンセル</button>
-      <button class="btn btn-p" onclick="window['doSave']()">保存する</button>
+      <button class="btn btn-o" onclick="closeSaveModal()">キャンセル</button>
+      <button class="btn btn-p" onclick="doSave()">保存する</button>
     </div>
   </div>
 </div>
@@ -217,8 +217,8 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-seri
     </p>
     <div class="t12-legend" id="legend12"></div>
     <div style="text-align:center;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <button class="btn btn-p" onclick="window['startQ']()">診断スタート → （全24問）</button>
-      <button class="btn btn-o" onclick="window['goAdmin']()">管理画面</button>
+      <button class="btn btn-p" onclick="startQ()">診断スタート → （全24問）</button>
+      <button class="btn btn-o" onclick="goAdmin()">管理画面</button>
     </div>
   </div>
 </div>
@@ -242,8 +242,8 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-seri
       <div class="opts" id="q-opts"></div>
     </div>
     <div class="q-nav">
-      <button class="btn btn-o" id="btn-prev" onclick="window['prevQ']()" style="visibility:hidden">← 前へ</button>
-      <button class="btn btn-p" id="btn-next" onclick="window['nextQ']()">次へ →</button>
+      <button class="btn btn-o" id="btn-prev" onclick="prevQ()" style="visibility:hidden">← 前へ</button>
+      <button class="btn btn-p" id="btn-next" onclick="nextQ()">次へ →</button>
     </div>
   </div>
 </div>
@@ -265,10 +265,10 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-seri
     </div>
     <div class="score-row" id="score-row"></div>
     <div class="tab-nav no-print">
-      <button class="tab-btn on" onclick="window['doTab']('profile')">プロフィール</button>
-      <button class="tab-btn" onclick="window['doTab']('comm')">コミュニケーション</button>
-      <button class="tab-btn" onclick="window['doTab']('mgmt')">マネジメント</button>
-      <button class="tab-btn" onclick="window['doTab']('map')">12タイプ一覧</button>
+      <button class="tab-btn on" onclick="doTab('profile')">プロフィール</button>
+      <button class="tab-btn" onclick="doTab('comm')">コミュニケーション</button>
+      <button class="tab-btn" onclick="doTab('mgmt')">マネジメント</button>
+      <button class="tab-btn" onclick="doTab('map')">12タイプ一覧</button>
     </div>
     <!-- PROFILE -->
     <div class="tab-pane on" id="tp-profile">
@@ -315,11 +315,11 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-seri
       <div class="sec"><h3>⊞ DiSC 12タイプ マップ</h3><div class="t12-grid" id="r-map"></div></div>
     </div>
     <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:28px;" class="no-print">
-      <button class="btn btn-p" onclick="window['openSaveModal']()">💾 結果を保存</button>
-      <button class="btn btn-s" onclick="window['printResult']()">📄 PDF出力</button>
-      <button class="btn btn-o" onclick="window['goMulti']()">チーム診断 →</button>
-      <button class="btn btn-o" onclick="window['startQ']()">もう一度</button>
-      <button class="btn btn-o" onclick="window['showScr']('s-intro')">← トップ</button>
+      <button class="btn btn-p" onclick="openSaveModal()">💾 結果を保存</button>
+      <button class="btn btn-s" onclick="printResult()">📄 PDF出力</button>
+      <button class="btn btn-o" onclick="goMulti()">チーム診断 →</button>
+      <button class="btn btn-o" onclick="startQ()">もう一度</button>
+      <button class="btn btn-o" onclick="showScr('s-intro')">← トップ</button>
     </div>
   </div>
 </div>
@@ -337,8 +337,8 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-seri
     <div class="sec">
       <h3>⊞ メンバー入力</h3>
       <div id="m-list"></div>
-      <button class="m-add" onclick="window['addMember']()">＋ メンバーを追加</button>
-      <div style="text-align:center;"><button class="btn btn-p" onclick="window['analyzeTeam']()">チームを分析する →</button></div>
+      <button class="m-add" onclick="addMember()">＋ メンバーを追加</button>
+      <div style="text-align:center;"><button class="btn btn-p" onclick="analyzeTeam()">チームを分析する →</button></div>
     </div>
     <div id="m-result" style="display:none">
       <div class="sec"><h3>⊞ タイプ分布</h3><div class="team-dist" id="m-dist"></div><div class="balance-box" id="m-balance"></div></div>
@@ -346,7 +346,7 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-seri
       <div class="sec"><h3>★ チームへのアドバイス</h3><ul class="tip-list" id="m-adv"></ul></div>
     </div>
     <div style="text-align:center;margin-top:24px;">
-      <button class="btn btn-o" onclick="window['showScr']('s-intro')">← トップへ戻る</button>
+      <button class="btn btn-o" onclick="showScr('s-intro')">← トップへ戻る</button>
     </div>
   </div>
 </div>
@@ -366,9 +366,9 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-seri
       <h2 style="font-family:'Noto Serif JP',serif;font-size:22px;margin-bottom:8px;">管理者ログイン</h2>
       <p style="font-size:13px;color:var(--muted);margin-bottom:24px;">パスワードを入力してください<br><span style="font-size:11px;background:#F3F4F6;padding:2px 8px;border-radius:4px;font-family:'DM Mono',monospace;">初期PW: admin</span></p>
       <input type="password" id="adm-pw" placeholder="パスワード" style="width:100%;padding:12px 14px;border:1.5px solid var(--border2);border-radius:8px;font-size:14px;margin-bottom:12px;outline:none;font-family:'Noto Sans JP',sans-serif;" onkeydown="if(event.key==='Enter')checkPw()">
-      <button class="btn btn-p" style="width:100%;" onclick="window['checkPw']()">ログイン</button>
+      <button class="btn btn-p" style="width:100%;" onclick="checkPw()">ログイン</button>
       <div id="adm-pw-err" style="color:#B91C1C;font-size:12px;margin-top:8px;display:none;">パスワードが違います</div>
-      <div style="margin-top:20px;"><button class="btn btn-o" onclick="window['showScr']('s-intro')">← トップへ</button></div>
+      <div style="margin-top:20px;"><button class="btn btn-o" onclick="showScr('s-intro')">← トップへ</button></div>
     </div>
     <div id="adm-dashboard" style="display:none;">
       <div class="adm-stats" id="adm-stats"></div>
@@ -391,8 +391,8 @@ body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-seri
         <div id="adm-empty" class="adm-empty" style="display:none;">📭 保存された診断結果がありません</div>
       </div>
       <div style="text-align:center;margin-top:24px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
-        <button class="btn btn-d" onclick="window['clearAll']()">🗑 全データ削除</button>
-        <button class="btn btn-o" onclick="window['showScr']('s-intro')">← トップへ</button>
+        <button class="btn btn-d" onclick="clearAll()">🗑 全データ削除</button>
+        <button class="btn btn-o" onclick="showScr('s-intro')">← トップへ</button>
       </div>
     </div>
   </div>
@@ -871,11 +871,11 @@ function doSave(){
  arr.unshift(entry);
  saveResults(arr);
  closeSaveModal();
- showToast('\u2705 \u4fdd\u5b58\u3057\u307e\u3057\u305f');
+ showToast('✅ \u4fdd\u5b58\u3057\u307e\u3057\u305f');
  if(GAS_URL){
  fetch(GAS_URL,{method:'POST',body:JSON.stringify(entry)})
  .then(function(r){return r.json();})
- .then(function(d){if(d.status==='ok') showToast('\u1f4ca \u30b9\u30d7\u30ec\u30c3\u30c9\u30b7\u30fc\u30c8\u306b\u8a18\u9332\u3057\u307e\u3057\u305f');})
+ .then(function(d){if(d.status==='ok') showToast('📊 \u30b9\u30d7\u30ec\u30c3\u30c9\u30b7\u30fc\u30c8\u306b\u8a18\u9332\u3057\u307e\u3057\u305f');})
  .catch(function(){showToast('\u26a0\ufe0f \u30b9\u30d7\u30ec\u30c3\u30c9\u30b7\u30fc\u30c8\u3078\u306e\u9001\u4fe1\u306b\u5931\u6557\u3057\u307e\u3057\u305f');});
  }
 }
@@ -920,35 +920,35 @@ function printResult(){
  }).join('')
  +'</div>'
  +'<div style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:16px 20px;margin-bottom:12px;">'
- +'<div style="font-size:13px;font-weight:700;margin-bottom:10px;border-bottom:1px solid #E5E7EB;padding-bottom:8px;">\u1f4cb \u30bf\u30a4\u30d7\u6982\u8981</div>'
+ +'<div style="font-size:13px;font-weight:700;margin-bottom:10px;border-bottom:1px solid #E5E7EB;padding-bottom:8px;">📋 \u30bf\u30a4\u30d7\u6982\u8981</div>'
  +'<p style="font-size:13px;color:#374151;line-height:1.9;margin-bottom:10px;">'+t.overview+'</p>'
  +'<div style="border-left:3px solid '+col+';padding:10px 14px;background:#F8F9FB;font-size:12px;color:#374151;line-height:1.75;">'+t.note+'</div>'
  +'</div>'
  +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">'
  +'<div style="background:#F0FDF4;border:1px solid #86EFAC;border-radius:10px;padding:14px 16px;">'
- +'<div style="font-size:11px;font-weight:700;color:#15803D;margin-bottom:8px;">\u2726 \u5f37\u307f\u30fb\u5f97\u610f\u306a\u3053\u3068</div>'
+ +'<div style="font-size:11px;font-weight:700;color:#15803D;margin-bottom:8px;">✦ \u5f37\u307f\u30fb\u5f97\u610f\u306a\u3053\u3068</div>'
  +'<ul style="list-style:none;font-size:12px;color:#374151;line-height:1.85;">'+t.strengths.map(function(s){return '<li style="display:flex;gap:6px;padding:2px 0;"><span style="color:#9CA3AF;font-family:monospace;">\u2014</span>'+s+'</li>';}).join('')+'</ul>'
  +'</div>'
  +'<div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:10px;padding:14px 16px;">'
- +'<div style="font-size:11px;font-weight:700;color:#B91C1C;margin-bottom:8px;">\u25b3 \u6ce8\u610f\u70b9\u30fb\u6210\u9577\u8ab2\u984c</div>'
+ +'<div style="font-size:11px;font-weight:700;color:#B91C1C;margin-bottom:8px;">△ \u6ce8\u610f\u70b9\u30fb\u6210\u9577\u8ab2\u984c</div>'
  +'<ul style="list-style:none;font-size:12px;color:#374151;line-height:1.85;">'+t.challenges.map(function(s){return '<li style="display:flex;gap:6px;padding:2px 0;"><span style="color:#9CA3AF;font-family:monospace;">\u2014</span>'+s+'</li>';}).join('')+'</ul>'
  +'</div>'
  +'</div>'
  +'<div style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:16px 20px;margin-bottom:12px;">'
- +'<div style="font-size:13px;font-weight:700;margin-bottom:10px;border-bottom:1px solid #E5E7EB;padding-bottom:8px;">\u1f4ac \u30b3\u30df\u30e5\u30cb\u30b1\u30fc\u30b7\u30e7\u30f3\u30b9\u30bf\u30a4\u30eb</div>'
+ +'<div style="font-size:13px;font-weight:700;margin-bottom:10px;border-bottom:1px solid #E5E7EB;padding-bottom:8px;">💬 \u30b3\u30df\u30e5\u30cb\u30b1\u30fc\u30b7\u30e7\u30f3\u30b9\u30bf\u30a4\u30eb</div>'
  +'<p style="font-size:13px;color:#374151;line-height:1.9;margin-bottom:10px;">'+t.commDesc+'</p>'
  +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">'
- +'<div style="background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 12px;"><div style="font-size:10px;font-weight:700;color:#15803D;margin-bottom:6px;">\u1f44d \u597d\u304d</div><ul style="list-style:none;font-size:11px;color:#374151;line-height:1.8;">'+t.commLike.map(function(s){return '<li>\u30fb'+s+'</li>';}).join('')+'</ul></div>'
- +'<div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:8px;padding:10px 12px;"><div style="font-size:10px;font-weight:700;color:#B91C1C;margin-bottom:6px;">\u1f44e \u82e6\u624b</div><ul style="list-style:none;font-size:11px;color:#374151;line-height:1.8;">'+t.commDislike.map(function(s){return '<li>\u30fb'+s+'</li>';}).join('')+'</ul></div>'
+ +'<div style="background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 12px;"><div style="font-size:10px;font-weight:700;color:#15803D;margin-bottom:6px;">👍 \u597d\u304d</div><ul style="list-style:none;font-size:11px;color:#374151;line-height:1.8;">'+t.commLike.map(function(s){return '<li>\u30fb'+s+'</li>';}).join('')+'</ul></div>'
+ +'<div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:8px;padding:10px 12px;"><div style="font-size:10px;font-weight:700;color:#B91C1C;margin-bottom:6px;">👎 \u82e6\u624b</div><ul style="list-style:none;font-size:11px;color:#374151;line-height:1.8;">'+t.commDislike.map(function(s){return '<li>\u30fb'+s+'</li>';}).join('')+'</ul></div>'
  +'</div>'
  +'</div>'
  +'<div style="background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:16px 20px;">'
- +'<div style="font-size:13px;font-weight:700;margin-bottom:10px;border-bottom:1px solid #E5E7EB;padding-bottom:8px;">\u1f3af \u30de\u30cd\u30b8\u30e1\u30f3\u30c8\u65b9\u91dd</div>'
+ +'<div style="font-size:13px;font-weight:700;margin-bottom:10px;border-bottom:1px solid #E5E7EB;padding-bottom:8px;">🎯 \u30de\u30cd\u30b8\u30e1\u30f3\u30c8\u65b9\u91dd</div>'
  +'<p style="font-size:13px;color:#374151;line-height:1.9;margin-bottom:10px;">'+t.mgmtDesc+'</p>'
  +'<div style="border-left:3px solid '+col+';padding:10px 14px;background:#F8F9FB;font-size:12px;color:#374151;line-height:1.75;margin-bottom:10px;">'+t.mgmtNote+'</div>'
  +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">'
- +'<div style="background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 12px;"><div style="font-size:10px;font-weight:700;color:#15803D;margin-bottom:6px;">\u2705 \u52b9\u679c\u7684</div><ul style="list-style:none;font-size:11px;color:#374151;line-height:1.8;">'+t.mgmtGood.map(function(s){return '<li>\u30fb'+s+'</li>';}).join('')+'</ul></div>'
- +'<div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:8px;padding:10px 12px;"><div style="font-size:10px;font-weight:700;color:#B91C1C;margin-bottom:6px;">\u26d4 NG</div><ul style="list-style:none;font-size:11px;color:#374151;line-height:1.8;">'+t.mgmtNg.map(function(s){return '<li>\u30fb'+s+'</li>';}).join('')+'</ul></div>'
+ +'<div style="background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:10px 12px;"><div style="font-size:10px;font-weight:700;color:#15803D;margin-bottom:6px;">✅ \u52b9\u679c\u7684</div><ul style="list-style:none;font-size:11px;color:#374151;line-height:1.8;">'+t.mgmtGood.map(function(s){return '<li>\u30fb'+s+'</li>';}).join('')+'</ul></div>'
+ +'<div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:8px;padding:10px 12px;"><div style="font-size:10px;font-weight:700;color:#B91C1C;margin-bottom:6px;">⛔ NG</div><ul style="list-style:none;font-size:11px;color:#374151;line-height:1.8;">'+t.mgmtNg.map(function(s){return '<li>\u30fb'+s+'</li>';}).join('')+'</ul></div>'
  +'</div>'
  +'</div>'
  +'</div>';
@@ -1022,10 +1022,10 @@ function analyzeTeam(){
  var pr=pairs[pi],pd=getPairData(pr.aType,pr.bType);
  ph+='<div class="pair-card"><div class="pair-header"><div class="pair-badges"><div class="pair-badge" style="background:'+TCOL[pr.aType]+'">'+T12[pr.aType].label+'</div><span style="font-size:14px;color:var(--muted)">\u00d7</span><div class="pair-badge" style="background:'+TCOL[pr.bType]+'">'+T12[pr.bType].label+'</div></div><div class="pair-title">'+pr.aName+' \u00d7 '+pr.bName+'</div></div>'
  +'<div class="pair-body">'
- +'<div class="pair-section strength"><h4 class="g">\u2726 \u5f37\u307f</h4><ul>'+pd.strength.map(li).join('')+'</ul></div>'
- +'<div class="pair-section challenge"><h4 class="r">\u25b3 \u8ab2\u984c</h4><ul>'+pd.challenge.map(li).join('')+'</ul></div>'
- +'<div class="pair-section advice"><h4 class="b">\u1f4a1 \u89e3\u6c7a\u7b56</h4><ul>'+pd.advice.map(li).join('')+'</ul></div>'
- +'<div class="pair-section management"><h4 class="o">\u1f3af \u30de\u30cd\u30b8\u30e1\u30f3\u30c8</h4><ul>'+pd.management.map(li).join('')+'</ul></div>'
+ +'<div class="pair-section strength"><h4 class="g">✦ \u5f37\u307f</h4><ul>'+pd.strength.map(li).join('')+'</ul></div>'
+ +'<div class="pair-section challenge"><h4 class="r">△ \u8ab2\u984c</h4><ul>'+pd.challenge.map(li).join('')+'</ul></div>'
+ +'<div class="pair-section advice"><h4 class="b">💡 \u89e3\u6c7a\u7b56</h4><ul>'+pd.advice.map(li).join('')+'</ul></div>'
+ +'<div class="pair-section management"><h4 class="o">🎯 \u30de\u30cd\u30b8\u30e1\u30f3\u30c8</h4><ul>'+pd.management.map(li).join('')+'</ul></div>'
  +'</div></div>';
  }
  document.getElementById('m-pairs').innerHTML=ph;
@@ -1150,11 +1150,11 @@ function showDetail(id){
  +'</div>'
  +'<div style="background:#F8F9FB;border-left:3px solid '+col+';padding:12px 16px;border-radius:0 8px 8px 0;font-size:13px;color:#374151;line-height:1.85;margin-bottom:14px;">'+t.overview+'</div>'
  +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">'
- +'<div style="background:#F0FDF4;border:1px solid #86EFAC;border-radius:10px;padding:12px 14px;"><div style="font-size:11px;font-weight:700;color:#15803D;margin-bottom:8px;">\u2726 \u5f37\u307f</div><ul style="list-style:none;font-size:12px;color:#374151;line-height:1.8;">'+t.strengths.slice(0,5).map(function(s){return '<li>\u30fb'+s+'</li>';}).join('')+'</ul></div>'
- +'<div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:10px;padding:12px 14px;"><div style="font-size:11px;font-weight:700;color:#B91C1C;margin-bottom:8px;">\u25b3 \u8ab2\u984c</div><ul style="list-style:none;font-size:12px;color:#374151;line-height:1.8;">'+t.challenges.slice(0,5).map(function(s){return '<li>\u30fb'+s+'</li>';}).join('')+'</ul></div>'
+ +'<div style="background:#F0FDF4;border:1px solid #86EFAC;border-radius:10px;padding:12px 14px;"><div style="font-size:11px;font-weight:700;color:#15803D;margin-bottom:8px;">✦ \u5f37\u307f</div><ul style="list-style:none;font-size:12px;color:#374151;line-height:1.8;">'+t.strengths.slice(0,5).map(function(s){return '<li>\u30fb'+s+'</li>';}).join('')+'</ul></div>'
+ +'<div style="background:#FEF2F2;border:1px solid #FCA5A5;border-radius:10px;padding:12px 14px;"><div style="font-size:11px;font-weight:700;color:#B91C1C;margin-bottom:8px;">△ \u8ab2\u984c</div><ul style="list-style:none;font-size:12px;color:#374151;line-height:1.8;">'+t.challenges.slice(0,5).map(function(s){return '<li>\u30fb'+s+'</li>';}).join('')+'</ul></div>'
  +'</div>'
  +'<div style="background:#FFF7ED;border:1px solid #FED7AA;border-radius:10px;padding:12px 14px;">'
- +'<div style="font-size:11px;font-weight:700;color:#C2410C;margin-bottom:8px;">\u1f3af \u30de\u30cd\u30b8\u30e1\u30f3\u30c8\u306e\u8981\u70b9</div>'
+ +'<div style="font-size:11px;font-weight:700;color:#C2410C;margin-bottom:8px;">🎯 \u30de\u30cd\u30b8\u30e1\u30f3\u30c8\u306e\u8981\u70b9</div>'
  +'<p style="font-size:12px;color:#374151;line-height:1.8;margin-bottom:8px;">'+t.mgmtNote+'</p>'
  +'<ul style="list-style:none;font-size:12px;color:#374151;line-height:1.8;">'+t.mgmtGood.slice(0,4).map(function(s){return '<li>\u30fb'+s+'</li>';}).join('')+'</ul>'
  +'</div>';
